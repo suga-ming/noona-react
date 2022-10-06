@@ -28,10 +28,13 @@ function App() {
     let computerChoice = randomChoice();
     setComputerSelect(computerChoice);
     setResult(judgement(choice[userChoice], computerChoice));
+    // setComputerResult(computerJudgement(choice[userChoice], computerChoice));
+    // setComputerResult(computerJudgement(result));
+    // console.log("computerResult는", computerResult);
+    // console.log("judgement는", setResult);
   };
 
   const judgement = (user, computer) => {
-    console.log(user.name);
     if (user.name == computer.name) {
       return "tie";
     } else if (user.name == "Sicssors")
@@ -41,6 +44,30 @@ function App() {
     else if (user.name == "Rock")
       return computer.name == "Paper" ? "lose" : "win";
   };
+
+  // const computerJudgement = (j) => {
+  //   if (j == "tie") {
+  //     // console.log("결과", "tie");
+  //     return "tie";
+  //   } else if (j == "win") {
+  //     // console.log("결과", "lose");
+  //     return "lose";
+  //   } else {
+  //     return "win";
+  //     // console.log("결과", "win");
+  //   }
+  // };
+
+  // const computerJudgement = (user, computer) => {
+  //   if (user.name == computer.name) {
+  //     return "tie";
+  //   } else if (user.name == "Sicssors")
+  //     return computer.name == "Rock" ? "win" : "lose";
+  //   else if (user.name == "Paper")
+  //     return computer.name == "Rock" ? "lose" : "win";
+  //   else if (user.name == "Rock")
+  //     return computer.name == "Paper" ? "win" : "lose";
+  // };
 
   const randomChoice = () => {
     let choiceItem = Object.keys(choice);
@@ -53,7 +80,7 @@ function App() {
     <div>
       <div className="main">
         <Box name="you" item={userSelect} result={result} />
-        <Box name="computer" item={computerSelect} result={result} />
+        <Box name="Computer" item={computerSelect} result={result} />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
