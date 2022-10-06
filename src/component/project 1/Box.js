@@ -5,7 +5,7 @@ const Box = (props) => {
   let result;
   if (
     props.title === "Computer" &&
-    props.rseult !== "tie" &&
+    props.result !== "tie" &&
     props.result !== ""
   ) {
     result = props.result === "win" ? "lose" : "win";

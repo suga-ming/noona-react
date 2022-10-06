@@ -30,6 +30,7 @@ function App() {
     setResult(judgement(choice[userChoice], computerChoice));
     // setComputerResult(computerJudgement(choice[userChoice], computerChoice));
     // setComputerResult(computerJudgement(result));
+
     // console.log("computerResult는", computerResult);
     // console.log("judgement는", setResult);
   };
@@ -79,8 +80,8 @@ function App() {
   return (
     <div>
       <div className="main">
-        <Box name="you" item={userSelect} result={result} />
-        <Box name="Computer" item={computerSelect} result={result} />
+        <Box title="You" item={userSelect} result={result} />
+        <Box title="Computer" item={computerSelect} result={result} />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
