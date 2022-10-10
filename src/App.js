@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Box from "./component/project 1/Box";
 
@@ -21,7 +21,11 @@ function App() {
   const [userSelect, setUserSelect] = useState(null);
   const [computerSelect, setComputerSelect] = useState(null);
   const [result, setResult] = useState("");
-  // const [computerResult, setComputerResult] = useState("");
+  const [computerResult, setComputerResult] = useState("");
+  useEffect(() => {
+    console.log(result);
+    setComputerResult(computerJudgement(result));
+  }, [result]);
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
@@ -38,7 +42,7 @@ function App() {
   const judgement = (user, computer) => {
     if (user.name == computer.name) {
       return "tie";
-    } else if (user.name == "Sicssors")
+    } else if (user.name == "Scissors")
       return computer.name == "Rock" ? "lose" : "win";
     else if (user.name == "Paper")
       return computer.name == "Rock" ? "win" : "lose";
@@ -46,18 +50,18 @@ function App() {
       return computer.name == "Paper" ? "lose" : "win";
   };
 
-  // const computerJudgement = (j) => {
-  //   if (j == "tie") {
-  //     // console.log("결과", "tie");
-  //     return "tie";
-  //   } else if (j == "win") {
-  //     // console.log("결과", "lose");
-  //     return "lose";
-  //   } else {
-  //     return "win";
-  //     // console.log("결과", "win");
-  //   }
-  // };
+  const computerJudgement = (j) => {
+    if (j == "tie") {
+      // console.log("결과", "tie");
+      return "tie";
+    } else if (j == "win") {
+      // console.log("결과", "lose");
+      return "lose";
+    } else {
+      return "win";
+      // console.log("결과", "win");
+    }
+  };
 
   // const computerJudgement = (user, computer) => {
   //   if (user.name == computer.name) {
