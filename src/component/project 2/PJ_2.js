@@ -24,12 +24,19 @@ const PJ2 = () => {
     setWeather(data);
   };
 
-  useEffect(() => {
-    getCurrentLocation();
-  }, []);
+  const getWeatherByCity = async () => {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=de49f1b27238e4df2be879a8764c4f57&units=metric`;
+    let response = await fetch(url);
+    let data = await response.json();
+    setWeather(data);
+  };
 
   useEffect(() => {
-    console.log("city", city);
+    if (city == "") {
+      getCurrentLocation();
+    } else {
+      getWeatherByCity();
+    }
   }, [city]);
 
   return (
