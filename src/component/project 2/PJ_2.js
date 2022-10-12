@@ -11,6 +11,14 @@ const PJ2 = () => {
   const [city, setCity] = useState("");
   const cities = ["paris", "new york", "tokyo", "seoul"];
 
+  const handleCityChange = (city) => {
+    if (city == "current") {
+      setCity(null);
+    } else {
+      setCity(city);
+    }
+  };
+
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude;
@@ -54,7 +62,11 @@ const PJ2 = () => {
       ) : (
         <div className="weather-box">
           <WeatherBox weather={weather} />
-          <WeatherButton cities={cities} setCity={setCity} />
+          <WeatherButton
+            cities={cities}
+            selectedCity={city}
+            handleCityChange={handleCityChange}
+          />
         </div>
       )}
     </div>
