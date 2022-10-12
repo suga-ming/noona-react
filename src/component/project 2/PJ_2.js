@@ -8,7 +8,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const PJ2 = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(null);
   const cities = ["paris", "new york", "tokyo", "seoul"];
 
   const handleCityChange = (city) => {
@@ -46,7 +46,7 @@ const PJ2 = () => {
   };
 
   useEffect(() => {
-    if (city == "") {
+    if (city == null) {
       getCurrentLocation();
     } else {
       getWeatherByCity();
