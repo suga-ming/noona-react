@@ -11,6 +11,7 @@ const Homepage = () => {
   const goProductPage = () => {
     navigate("/products?q=skirt");
   };
+
   return (
     <div>
       Homepage
