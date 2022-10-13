@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductAll = () => {
-  return <div>전체상품페이지</div>;
+  return <div></div>;
 };
 
 export default ProductAll;
