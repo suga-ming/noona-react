@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import ProductCard from "./ProductCard";
 
 const ProductAll = () => {
-  return <div></div>;
+  const [productList, setProductList] = useState([]);
+  const getProducts = async () => {
+    let url = "http://localhost:3004/products";
+    let respose = await fetch(url);
+    let data = await respose.json();
+    setProductList(data);
+  };
+  useEffect(() => {
+    getProducts();
+  }, []);
+  return (
+    <div>
+      <Container>
+        <Row>
+          {productList.map((menu) => (
+            <Col lg={3}>
+              <ProductCard item={menu} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
+  );
 };
 
 export default ProductAll;

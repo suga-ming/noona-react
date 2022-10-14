@@ -5,6 +5,7 @@ import ProductAll from "./ProductAll";
 import Login from "./Login";
 import ProductDetail from "./ProductDetail";
 import Navbar from "./Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const PJ_3 = () => {
   return (
