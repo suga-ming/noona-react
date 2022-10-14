@@ -1,0 +1,38 @@
+.detail-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.detail-img {
+  margin-right: 20px;
+}
+
+.detail-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.detail-price {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.detail-choice {
+  font-size: 10px;
+  margin-bottom: 18px;
+}
+
+.detail-option {
+  width: 130px;
+  margin-bottom: 18px;
+}
+
+.detail-button {
+  background-color: black;
+  border: none;
+  color: white;
+  width: 400px;
+  height: 30px;
+}
