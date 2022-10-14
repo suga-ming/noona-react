@@ -20,6 +20,10 @@
   padding-left: 20px;
 }
 
+.login-input:focus {
+  outline: none;
+}
+
 .login-form {
   margin-bottom: 10px;
 }
