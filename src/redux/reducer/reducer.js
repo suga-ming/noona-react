@@ -3,7 +3,7 @@ let initialState = {
 };
 
 function reducer(state = initialState, action) {
-  console.log("action", action);
+  console.log("action1", action);
   if (action.type === "INCREASEMENT") {
     return { ...state, count: state.count + 1 };
   } else if (action.type === "DECREASEMENT") {

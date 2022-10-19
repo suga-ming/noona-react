@@ -1,0 +1,28 @@
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.searchBox {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.contactitem {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 3px;
+  padding: 5px;
+  width: 500px;
+}
+
+.mb-3 {
+  width: 450px;
+}
+
+.searchBox-input {
+  width: 300px;
+}

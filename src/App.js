@@ -1,6 +1,6 @@
 import "../src/App.css";
-import Counter2 from "./Counter2";
-import Counting from "./page/Counting";
+import PJ_4 from "./component/procject 4/PJ_4";
+// import Counting from "./page/Counting";
 // import PJ_3 from "./component/project 3/PJ_3";
 // import PJ1 from "./component/project 1/PJ_1";
 // import PJ2 from "./component/project 2/PJ_2";
@@ -14,7 +14,7 @@ function App() {
       {/* <RouterPractice /> */}
       {/* <PJ_3 /> */}
       {/* <Counting /> */}
-      <Counter2 />
+      <PJ_4 />
     </>
   );
 }
