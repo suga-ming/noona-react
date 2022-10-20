@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, NavItem } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Row, Col } from "react-bootstrap";
 
 const ContactItem = ({ item }) => {
   return (
