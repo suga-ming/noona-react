@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const PJ_3 = () => {
   const [authenticate, setAuthenticate] = useState(false); //true면 로그인이 됨
-  // const database = [{ username: kby9901, password: 1234 }];
   const PrivateRoute = () => {
     return authenticate == true ? <ProductDetail /> : <Navigate to="/login" />;
   };

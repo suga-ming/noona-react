@@ -1,12 +1,17 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { authenticateAction } from "./redux/actions/authenticateAction";
 
 const Login = ({ setAuthenticate }) => {
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const loginUser = (e) => {
     e.preventDefault();
-    setAuthenticate(true);
+    dispatch(authenticateAction.login(id, password));
     navigate("/");
   };
   return (
@@ -17,6 +22,9 @@ const Login = ({ setAuthenticate }) => {
           className="login-input"
           type="text"
           placeholder="Email address"
+          onChange={(e) => {
+            setId(e.target.value);
+          }}
         ></input>
       </div>
       <div className="login-form">
@@ -24,6 +32,9 @@ const Login = ({ setAuthenticate }) => {
           className="login-input"
           type="password"
           placeholder="Password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
         ></input>
       </div>
       <div>

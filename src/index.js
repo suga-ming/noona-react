@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 // import store from "./redux/store";
 // import store from "./component/procject 4/redux/store";
-import store from "./redux/store";
+import store from "../src/component/project 3/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
