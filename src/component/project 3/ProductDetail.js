@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./productDetail.css";
 import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { productDetailAction } from "./redux/actions/productDetailAction";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
   const getProductDetail = async () => {
-    let url = `http://localhost:3004/products/${id}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setProduct(data);
+    dispatch(productDetailAction.getProductDetail(id));
   };
 
   useEffect(() => {
