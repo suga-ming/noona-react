@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const PJ_3 = () => {
-  const [authenticate, setAuthenticate] = useState(false); //true면 로그인이 됨
+  const authenticate = (state) => state.auth.authenticate;
   const PrivateRoute = () => {
     return authenticate == true ? <ProductDetail /> : <Navigate to="/login" />;
   };
@@ -19,13 +19,10 @@ const PJ_3 = () => {
 
   return (
     <div>
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />}></Route>
-        <Route
-          path="/login"
-          element={<Login setAuthenticate={setAuthenticate} />}
-        ></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/product/:id" element={<PrivateRoute />}></Route>
       </Routes>
     </div>

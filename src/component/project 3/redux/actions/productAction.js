@@ -8,4 +8,13 @@ function getProducts(searchQuery) {
   };
 }
 
-export const productAction = { getProducts };
+function getProductDetail(id) {
+  return async (dispatch) => {
+    let url = `http://localhost:3004/products/${id}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    dispatch({ type: "Get_PRODUCT_DETAIL", payload: { data } });
+  };
+}
+
+export const productAction = { getProducts, getProductDetail };

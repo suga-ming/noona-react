@@ -19,3 +19,5 @@ function authenticateReducer(state = initialState, action) {
       return { ...state };
   }
 }
+
+export default authenticateReducer;

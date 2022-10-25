@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./productDetail.css";
 import Form from "react-bootstrap/Form";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { productDetailAction } from "./redux/actions/productDetailAction";
+import { useDispatch, useSelector } from "react-redux";
+import { productAction } from "./redux/actions/productAction";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const product = useSelector((state) => state.product.selectedItem);
   const dispatch = useDispatch();
   const getProductDetail = async () => {
-    dispatch(productDetailAction.getProductDetail(id));
+    dispatch(productAction.getProductDetail(id));
   };
 
   useEffect(() => {
